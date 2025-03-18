@@ -3,7 +3,7 @@
     "types": [
       {
         "name": "Root",
-        "description": "A hands-on tour to walk you through Membrane's core concepts and features.",
+        "description": "A hands-on tutorial to walk you through Membrane's core concepts and features.",
         "fields": [
           {
             "name": "status",
@@ -28,7 +28,7 @@
     ]
   },
   "dependencies": {
-    "email": "email:",
-    "sms": "sms:"
+    "email": "sys-email:",
+    "sms": "sys-sms:"
   }
 }
