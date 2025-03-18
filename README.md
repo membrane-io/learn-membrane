@@ -1,8 +1,8 @@
-# Getting started with Membrane
+# Learn Membrane
 
 ## What's this
 
-This program is a hands-on tour to walk you through Membrane's core concepts and features.
+This program is a hands-on tutorial to walk you through Membrane's core concepts and features.
 
 Open up `index.ts` to get started. We'll go over the other files in this directory—`memconfig.json` and `memconfig.lock`—in Step 8.
 
