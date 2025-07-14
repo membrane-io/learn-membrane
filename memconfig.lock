@@ -1,339 +1,45 @@
 {
-  "types": {
-    "email": {
-      "gref_hash": "5d0928717cd7e1bb0a8efb057401a2179e994e26757307d8994ef85d12bc3e53",
-      "type": "email:Root"
-    },
-    "sms": {
-      "gref_hash": "9f3731cc47302939f352abadad67485a33ed9eb069680d1c83dfcd21f1656c5e",
-      "type": "sms:Root"
-    }
-  },
   "imports": [
     {
-      "name": "email",
+      "name": "sys-email",
       "schema": {
+        "imports": [
+        ],
         "types": [
           {
-            "name": "Root",
-            "description": "Send yourself emails",
             "actions": [
               {
+                "description": "",
+                "hints": {
+                },
                 "name": "send",
-                "description": "Sends an email to the configured address",
-                "type": "Void",
                 "params": [
                   {
-                    "name": "subject",
                     "description": "",
-                    "type": "String",
-                    "optional": false
-                  },
-                  {
-                    "name": "body",
-                    "description": "",
-                    "type": "String",
-                    "optional": false
-                  }
-                ],
-                "hints": {}
-              },
-              {
-                "name": "endpoint",
-                "description": "Invoked when an HTTP request is received for this program",
-                "type": "String",
-                "params": [
-                  {
-                    "name": "method",
-                    "description": "HTTP method",
-                    "type": "String",
-                    "optional": false
-                  },
-                  {
-                    "name": "path",
-                    "description": "HTTP path",
-                    "type": "String",
-                    "optional": false
-                  },
-                  {
-                    "name": "body",
-                    "description": "HTTP body, if any",
-                    "type": "String",
-                    "optional": true
-                  },
-                  {
-                    "name": "query",
-                    "description": "HTTP query string, encoded as JSON",
-                    "type": "String",
-                    "optional": true
-                  },
-                  {
-                    "name": "headers",
-                    "description": "HTTP headers, encoded as JSON",
-                    "type": "String",
-                    "optional": false
-                  }
-                ],
-                "hints": {
-                  "hidden": true
-                }
-              },
-              {
-                "name": "email",
-                "description": "Invoked when a new email arrives for this program",
-                "type": "String",
-                "params": [
-                  {
-                    "name": "replyTo",
-                    "description": "Reply to",
-                    "type": "String",
-                    "optional": true
-                  },
-                  {
-                    "name": "text",
-                    "description": "Email body as text",
-                    "type": "String",
-                    "optional": false
-                  },
-                  {
-                    "name": "from",
-                    "description": "Email sender",
-                    "type": "String",
-                    "optional": false
-                  },
-                  {
-                    "name": "to",
-                    "description": "To",
-                    "type": "String",
-                    "optional": false
-                  },
-                  {
-                    "name": "cc",
-                    "description": "CC",
-                    "type": "String",
-                    "optional": true
-                  },
-                  {
+                    "hints": {
+                    },
                     "name": "subject",
-                    "description": "Email subject",
-                    "type": "String",
-                    "optional": false
+                    "optional": false,
+                    "type": "String"
                   },
                   {
-                    "name": "html",
-                    "description": "Email body as HTML",
-                    "type": "String",
-                    "optional": false
-                  },
-                  {
-                    "name": "id",
-                    "description": "Email ID",
-                    "type": "String",
-                    "optional": false
-                  },
-                  {
-                    "name": "inReplyTo",
-                    "description": "ID of email this is a reply to, if any",
-                    "type": "String",
-                    "optional": true
-                  },
-                  {
-                    "name": "replyText",
-                    "description": "Reply text",
-                    "type": "String",
-                    "optional": true
-                  },
-                  {
-                    "name": "attachments",
-                    "description": "An array of attachment names and download URLs",
-                    "type": "Json",
-                    "optional": true
+                    "description": "",
+                    "hints": {
+                    },
+                    "name": "body",
+                    "optional": false,
+                    "type": "String"
                   }
                 ],
-                "hints": {
-                  "hidden": true
-                }
+                "type": "Void"
               }
+            ],
+            "description": "Send emails",
+            "events": [
             ],
             "fields": [
-              {
-                "name": "gref",
-                "description": "A reference to this node",
-                "type": "Ref",
-                "ofType": "Root",
-                "params": [],
-                "hints": {}
-              }
             ],
-            "events": []
-          }
-        ],
-        "imports": [
-          {
-            "name": "sys-email",
-            "schema": {
-              "types": [
-                {
-                  "name": "Root",
-                  "description": "",
-                  "actions": [
-                    {
-                      "name": "send",
-                      "description": "",
-                      "type": "Void",
-                      "params": [
-                        {
-                          "name": "subject",
-                          "description": "",
-                          "type": "String",
-                          "optional": false
-                        },
-                        {
-                          "name": "body",
-                          "description": "",
-                          "type": "String",
-                          "optional": false
-                        }
-                      ],
-                      "hints": {}
-                    }
-                  ],
-                  "fields": [],
-                  "events": []
-                }
-              ],
-              "imports": []
-            },
-            "source": {
-              "Program": "tbd"
-            }
-          },
-          {
-            "name": "sys-clock",
-            "schema": {
-              "types": [
-                {
-                  "name": "Root",
-                  "description": "",
-                  "actions": [
-                    {
-                      "name": "sleep",
-                      "description": "",
-                      "type": "Void",
-                      "params": [
-                        {
-                          "name": "key",
-                          "description": "",
-                          "type": "String",
-                          "optional": false
-                        },
-                        {
-                          "name": "seconds",
-                          "description": "",
-                          "type": "Float",
-                          "optional": false
-                        }
-                      ],
-                      "hints": {}
-                    }
-                  ],
-                  "fields": [],
-                  "events": [
-                    {
-                      "name": "timer",
-                      "description": "",
-                      "type": "TimerEvent",
-                      "params": [
-                        {
-                          "name": "key",
-                          "description": "",
-                          "type": "String",
-                          "optional": false
-                        },
-                        {
-                          "name": "spec",
-                          "description": "",
-                          "type": "String",
-                          "optional": false
-                        },
-                        {
-                          "name": "maxCount",
-                          "description": "",
-                          "type": "Int",
-                          "optional": false
-                        }
-                      ],
-                      "hints": {}
-                    },
-                    {
-                      "name": "timerAt",
-                      "description": "",
-                      "type": "TimerEvent",
-                      "params": [
-                        {
-                          "name": "key",
-                          "description": "",
-                          "type": "String",
-                          "optional": false
-                        },
-                        {
-                          "name": "seconds",
-                          "description": "",
-                          "type": "String",
-                          "optional": false
-                        }
-                      ],
-                      "hints": {}
-                    }
-                  ]
-                },
-                {
-                  "name": "TimerEvent",
-                  "description": "",
-                  "actions": [],
-                  "fields": [
-                    {
-                      "name": "id",
-                      "description": "",
-                      "type": "String",
-                      "params": [],
-                      "hints": {}
-                    }
-                  ],
-                  "events": []
-                }
-              ],
-              "imports": []
-            },
-            "source": {
-              "Program": ""
-            }
-          },
-          {
-            "name": "sys-process",
-            "schema": {
-              "types": [
-                {
-                  "name": "Root",
-                  "description": "",
-                  "actions": [],
-                  "fields": [
-                    {
-                      "name": "endpointUrl",
-                      "description": "Gets the program's own endpoint URL",
-                      "type": "String",
-                      "params": [],
-                      "hints": {}
-                    }
-                  ],
-                  "events": []
-                }
-              ],
-              "imports": []
-            },
-            "source": {
-              "Program": ""
-            }
+            "name": "Root"
           }
         ]
       },
@@ -342,392 +48,54 @@
       }
     },
     {
-      "name": "sms",
+      "name": "sys-sms",
       "schema": {
+        "imports": [
+        ],
         "types": [
           {
-            "name": "Root",
-            "description": "Send yourself text messages",
             "actions": [
               {
-                "name": "configure",
-                "description": "Configure your phone number to send and receive text messages.\nPrefix with '+' sign followed by country code.",
-                "type": "Void",
-                "params": [
-                  {
-                    "name": "number",
-                    "description": "",
-                    "type": "String",
-                    "optional": false
-                  }
-                ],
-                "hints": {}
-              },
-              {
-                "name": "send",
-                "description": "Sends an SMS to the configured phone number",
-                "type": "Void",
-                "params": [
-                  {
-                    "name": "message",
-                    "description": "",
-                    "type": "String",
-                    "optional": false
-                  }
-                ],
-                "hints": {}
-              },
-              {
-                "name": "handleSms",
-                "description": "Tells the user program that an sms was received. You don't normally have to use this.",
-                "type": "Void",
-                "params": [
-                  {
-                    "name": "message",
-                    "description": "",
-                    "type": "String",
-                    "optional": false
-                  }
-                ],
-                "hints": {
-                  "hidden": true
-                }
-              },
-              {
-                "name": "endpoint",
-                "description": "Invoked when an HTTP request is received for this program",
-                "type": "String",
-                "params": [
-                  {
-                    "name": "method",
-                    "description": "HTTP method",
-                    "type": "String",
-                    "optional": false
-                  },
-                  {
-                    "name": "path",
-                    "description": "HTTP path",
-                    "type": "String",
-                    "optional": false
-                  },
-                  {
-                    "name": "body",
-                    "description": "HTTP body, if any",
-                    "type": "String",
-                    "optional": true
-                  },
-                  {
-                    "name": "query",
-                    "description": "HTTP query string, encoded as JSON",
-                    "type": "String",
-                    "optional": true
-                  },
-                  {
-                    "name": "headers",
-                    "description": "HTTP headers, encoded as JSON",
-                    "type": "String",
-                    "optional": false
-                  }
-                ],
-                "hints": {
-                  "hidden": true
-                }
-              },
-              {
-                "name": "email",
-                "description": "Invoked when a new email arrives for this program",
-                "type": "String",
-                "params": [
-                  {
-                    "name": "replyTo",
-                    "description": "Reply to",
-                    "type": "String",
-                    "optional": true
-                  },
-                  {
-                    "name": "text",
-                    "description": "Email body as text",
-                    "type": "String",
-                    "optional": false
-                  },
-                  {
-                    "name": "from",
-                    "description": "Email sender",
-                    "type": "String",
-                    "optional": false
-                  },
-                  {
-                    "name": "to",
-                    "description": "To",
-                    "type": "String",
-                    "optional": false
-                  },
-                  {
-                    "name": "cc",
-                    "description": "CC",
-                    "type": "String",
-                    "optional": true
-                  },
-                  {
-                    "name": "subject",
-                    "description": "Email subject",
-                    "type": "String",
-                    "optional": false
-                  },
-                  {
-                    "name": "html",
-                    "description": "Email body as HTML",
-                    "type": "String",
-                    "optional": false
-                  },
-                  {
-                    "name": "id",
-                    "description": "Email ID",
-                    "type": "String",
-                    "optional": false
-                  },
-                  {
-                    "name": "inReplyTo",
-                    "description": "ID of email this is a reply to, if any",
-                    "type": "String",
-                    "optional": true
-                  },
-                  {
-                    "name": "replyText",
-                    "description": "Reply text",
-                    "type": "String",
-                    "optional": true
-                  },
-                  {
-                    "name": "attachments",
-                    "description": "An array of attachment names and download URLs",
-                    "type": "Json",
-                    "optional": true
-                  }
-                ],
-                "hints": {
-                  "hidden": true
-                }
-              }
-            ],
-            "fields": [
-              {
-                "name": "gref",
-                "description": "A reference to this node",
-                "type": "Ref",
-                "ofType": "Root",
-                "params": [],
-                "hints": {}
-              }
-            ],
-            "events": [
-              {
-                "name": "received",
                 "description": "",
-                "type": "ReceivedEvent",
-                "params": [],
-                "hints": {}
-              }
-            ]
-          },
-          {
-            "name": "ReceivedEvent",
-            "description": "",
-            "actions": [],
-            "fields": [
-              {
-                "name": "message",
-                "description": "",
-                "type": "String",
-                "params": [],
-                "hints": {}
-              },
-              {
-                "name": "gref",
-                "description": "A reference to this node",
-                "type": "Ref",
-                "ofType": "ReceivedEvent",
-                "params": [],
-                "hints": {}
-              }
-            ],
-            "events": []
-          }
-        ],
-        "imports": [
-          {
-            "name": "sys-sms",
-            "schema": {
-              "types": [
-                {
-                  "name": "Root",
-                  "description": "",
-                  "actions": [
-                    {
-                      "name": "configure",
-                      "description": "",
-                      "type": "Void",
-                      "params": [
-                        {
-                          "name": "number",
-                          "description": "",
-                          "type": "String",
-                          "optional": false
-                        }
-                      ],
-                      "hints": {}
-                    },
-                    {
-                      "name": "send",
-                      "description": "",
-                      "type": "Void",
-                      "params": [
-                        {
-                          "name": "message",
-                          "description": "",
-                          "type": "String",
-                          "optional": false
-                        }
-                      ],
-                      "hints": {}
-                    }
-                  ],
-                  "fields": [],
-                  "events": []
-                }
-              ],
-              "imports": []
-            },
-            "source": {
-              "Program": "tbd"
-            }
-          },
-          {
-            "name": "sys-clock",
-            "schema": {
-              "types": [
-                {
-                  "name": "Root",
-                  "description": "",
-                  "actions": [
-                    {
-                      "name": "sleep",
-                      "description": "",
-                      "type": "Void",
-                      "params": [
-                        {
-                          "name": "key",
-                          "description": "",
-                          "type": "String",
-                          "optional": false
-                        },
-                        {
-                          "name": "seconds",
-                          "description": "",
-                          "type": "Float",
-                          "optional": false
-                        }
-                      ],
-                      "hints": {}
-                    }
-                  ],
-                  "fields": [],
-                  "events": [
-                    {
-                      "name": "timer",
-                      "description": "",
-                      "type": "TimerEvent",
-                      "params": [
-                        {
-                          "name": "key",
-                          "description": "",
-                          "type": "String",
-                          "optional": false
-                        },
-                        {
-                          "name": "spec",
-                          "description": "",
-                          "type": "String",
-                          "optional": false
-                        },
-                        {
-                          "name": "maxCount",
-                          "description": "",
-                          "type": "Int",
-                          "optional": false
-                        }
-                      ],
-                      "hints": {}
-                    },
-                    {
-                      "name": "timerAt",
-                      "description": "",
-                      "type": "TimerEvent",
-                      "params": [
-                        {
-                          "name": "key",
-                          "description": "",
-                          "type": "String",
-                          "optional": false
-                        },
-                        {
-                          "name": "seconds",
-                          "description": "",
-                          "type": "String",
-                          "optional": false
-                        }
-                      ],
-                      "hints": {}
-                    }
-                  ]
+                "hints": {
                 },
-                {
-                  "name": "TimerEvent",
-                  "description": "",
-                  "actions": [],
-                  "fields": [
-                    {
-                      "name": "id",
-                      "description": "",
-                      "type": "String",
-                      "params": [],
-                      "hints": {}
-                    }
-                  ],
-                  "events": []
-                }
-              ],
-              "imports": []
-            },
-            "source": {
-              "Program": ""
-            }
-          },
-          {
-            "name": "sys-process",
-            "schema": {
-              "types": [
-                {
-                  "name": "Root",
-                  "description": "",
-                  "actions": [],
-                  "fields": [
-                    {
-                      "name": "endpointUrl",
-                      "description": "Gets the program's own endpoint URL",
-                      "type": "String",
-                      "params": [],
-                      "hints": {}
-                    }
-                  ],
-                  "events": []
-                }
-              ],
-              "imports": []
-            },
-            "source": {
-              "Program": ""
-            }
+                "name": "configure",
+                "params": [
+                  {
+                    "description": "",
+                    "hints": {
+                    },
+                    "name": "number",
+                    "optional": false,
+                    "type": "String"
+                  }
+                ],
+                "type": "Void"
+              },
+              {
+                "description": "",
+                "hints": {
+                },
+                "name": "send",
+                "params": [
+                  {
+                    "description": "",
+                    "hints": {
+                    },
+                    "name": "message",
+                    "optional": false,
+                    "type": "String"
+                  }
+                ],
+                "type": "Void"
+              }
+            ],
+            "description": "Send SMS messages",
+            "events": [
+            ],
+            "fields": [
+            ],
+            "name": "Root"
           }
         ]
       },
@@ -735,5 +103,15 @@
         "Program": "tbd"
       }
     }
-  ]
+  ],
+  "types": {
+    "email": {
+      "gref_hash": "161c65c8cac0a7723f6c7fb0c82a51a4776fff50098de5f41afca6d8b9ddd136",
+      "type": "sys-email:Root"
+    },
+    "sms": {
+      "gref_hash": "d3305f57bc48712c6bb4200f97f3e11c714bb29af6b788544ebfa663bdb3b70a",
+      "type": "sys-sms:Root"
+    }
+  }
 }

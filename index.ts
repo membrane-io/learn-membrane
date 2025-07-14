@@ -26,7 +26,7 @@
 import { state } from "membrane";
 
 // We'll use `state` here to store your name and a count of the updates you've made to this program.
-state.name = "[add your name here]";
+state.name = state.name ?? "[add your name here]"; // Or configure it later
 state.updates = state.updates ?? 0;
 state.updates++;
 
@@ -55,6 +55,18 @@ export async function run() {
 // This program contains a `status` field that resolves to a string.
 export function status() {
   return state.updates ? "started" : "start your engine";
+}
+
+// Configure action that lets you set your name in program state
+export async function configure({ name }) {
+  if (name) {
+    state.name = name;
+  }
+}
+
+// Field that returns the current name stored in state
+export async function name() {
+  return state.name;
 }
 
 // We'll cover adding/editing/removing a program's actions and fields (aka its schema) in step 8.
@@ -156,18 +168,18 @@ export async function endpoint({ method, path, body, headers, query }) {
 
 /**
  * ========================================================================================================================
- * STEP 7 | Membrane API drivers
+ * STEP 7 | Membrane API packages
  * ========================================================================================================================
  */
 
-// Membrane has an ever-growing collection of API drivers.
-// Drivers are Membrane programs that connect to APIs like GitHub, Google Docs, Slack, OpenAI, Anthropic, etc.
+// Membrane has an ever-growing collection of API packages.
+// Packages are Membrane programs that connect to APIs like GitHub, Google Docs, Slack, OpenAI, Anthropic, etc.
 
-// The Membrane team maintains a set of open-source drivers and examples, which anyone can contribute to.
-// To view and install drivers, click "📦 PACKAGES" in the top left of the IDE.
+// The Membrane team maintains a set of open-source packages and examples, which anyone can contribute to.
+// To view and install packages, click "📦 PACKAGES" in the top left of the IDE.
 // Search "membrane" to see the packages shared by our team.
 
-// As an example, install the `membrane/github` driver and add it to your `hello-world` program's connections.
+// As an example, install the `membrane/github` package and add it to your `hello-world` program's connections.
 // To add a connection, click `+` next to CONNECTIONS in the PROGRAM tab, or drag 'n drop a program from the sidebar.
 
 // Create a personal access token on GitHub and configure it by clicking "github →GRAPH" -> `configure` in the sidebar.
@@ -180,7 +192,7 @@ export async function getGitHubProfile() {
 // You might have recognized the GraphQL query syntax to read fields `name` and `location` from the user node you fetched.
 // The `one` action returns a reference to a node in your Membrane Graph, and `.$query()` allows you to read its fields.
 // We'll touch on the Membrane Graph next, in step 8.
-// 🔗 To learn more about drivers in Membrane, visit: https://docs.membrane.io/concepts/drivers
+// 🔗 To learn more about drpackagein Membrane, visit: https://docs.membrane.io/concepts/drpackage
 
 /**
  * ========================================================================================================================
@@ -198,6 +210,33 @@ export async function getGitHubProfile() {
 // You should seldom if ever have to manually edit `memconfig.json`.
 
 // 🔗 To learn more about the Membrane graph, visit: https://docs.membrane.io/concepts/the-graph
+
+/**
+ * ========================================================================================================================
+ * STEP 9 | The Membrane Dashboard
+ * ========================================================================================================================
+ */
+
+// The Membrane Dashboard is a powerful tool for building custom interfaces to visualize and interact with your data.
+// You can create views for any type in your program and compose them into a customizable dashboard layout.
+
+// To get started with the dashboard:
+// 1. Click DASHBOARD in the top left of your editor
+// 2. Drag 'learn-membrane' from the sidebar onto the dashboard
+// 3. Create a custom view when prompted
+
+// We've included a views.tsx file that defines how our program appears in the dashboard.
+// The view shows your program's status, name, and update count, plus buttons for actions.
+// Try moving and resizing the block once it's on your dashboard.
+
+// The dashboard supports many useful features:
+// - Drag and drop interface for easy layout
+// - Multiple boards for organizing different views
+// - Pan and zoom navigation (try pressing space)
+// - Stack mode for exploring nested data
+// - Real-time updates as data changes
+
+// 🔗 To learn more about the dashboard and creating views, visit: https://docs.membrane.io/guides/dashboard
 
 /**
  * ========================================================================================================================
