@@ -192,7 +192,7 @@ export async function getGitHubProfile() {
 // You might have recognized the GraphQL query syntax to read fields `name` and `location` from the user node you fetched.
 // The `one` action returns a reference to a node in your Membrane Graph, and `.$query()` allows you to read its fields.
 // We'll touch on the Membrane Graph next, in step 8.
-// 🔗 To learn more about drpackagein Membrane, visit: https://docs.membrane.io/concepts/drpackage
+// 🔗 To learn more about packages in Membrane, visit: https://docs.membrane.io/concepts/packages
 
 /**
  * ========================================================================================================================
