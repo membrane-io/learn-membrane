@@ -38,8 +38,7 @@ export function Root({ self }) {
             <text>Welcome, {name}!</text>
           ) : (
             <row style={{ gap: 8, alignItems: "center", dividers: "none" }}>
-              <text>Set your name:</text>
-              <button action={self.configure}>Set Name</button>
+              <text>Set your name in index.ts</text>
             </row>
           ),
         )}

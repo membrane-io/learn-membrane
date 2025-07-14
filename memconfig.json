@@ -30,16 +30,6 @@
           {
             "name": "getGitHubProfile",
             "type": "Void"
-          },
-          {
-            "name": "configure",
-            "params": [
-              {
-                "name": "name",
-                "type": "String"
-              }
-            ],
-            "type": "Void"
           }
         ]
       }

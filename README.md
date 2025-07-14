@@ -10,13 +10,13 @@ Open up `index.ts` to get started. We'll go over the other files in this directo
 
 1. [Membrane state](./index.ts#L20)
 2. [Membrane actions and fields](./index.ts#L44)
-3. [Membrane `sms` and `email`](./index.ts#L79)
-4. [Membrane timers](./index.ts#L109)
-5. [Membrane HTTP endpoints](./index.ts#L130)
-6. [Membrane observability](./index.ts#L157)
-7. [Membrane API packages](./index.ts#L171)
-8. [Membrane Graph](./index.ts#L199)
-9. [Membrane Dashboard](./index.ts#L216)
+3. [Membrane `sms` and `email`](./index.ts#L72)
+4. [Membrane timers](./index.ts#L102)
+5. [Membrane HTTP endpoints](./index.ts#L123)
+6. [Membrane observability](./index.ts#L150)
+7. [Membrane API packages](./index.ts#L164)
+8. [Membrane Graph](./index.ts#L192)
+9. [Membrane Dashboard](./index.ts#L209)
 
 ## Where to learn more
 

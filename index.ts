@@ -26,7 +26,7 @@
 import { state } from "membrane";
 
 // We'll use `state` here to store your name and a count of the updates you've made to this program.
-state.name = state.name ?? "[add your name here]"; // Or configure it later
+state.name = "[add your name here]";
 state.updates = state.updates ?? 0;
 state.updates++;
 
@@ -55,13 +55,6 @@ export async function run() {
 // This program contains a `status` field that resolves to a string.
 export function status() {
   return state.updates ? "started" : "start your engine";
-}
-
-// Configure action that lets you set your name in program state
-export async function configure({ name }) {
-  if (name) {
-    state.name = name;
-  }
 }
 
 // Field that returns the current name stored in state
