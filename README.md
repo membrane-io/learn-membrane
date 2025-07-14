@@ -4,7 +4,7 @@
 
 This program is a hands-on tutorial to walk you through Membrane's core concepts and features.
 
-Open up `index.ts` to get started. We'll go over the other files in this directory—`memconfig.json` and `memconfig.lock`—in Step 8.
+Open up `index.ts` to get started. We'll go over the other files in this directory—`memconfig.json` and `views.tsx`—in Steps 8 and 9.
 
 ## What you'll learn
 
