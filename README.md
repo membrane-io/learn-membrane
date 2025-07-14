@@ -4,18 +4,19 @@
 
 This program is a hands-on tutorial to walk you through Membrane's core concepts and features.
 
-Open up `index.ts` to get started. We'll go over the other files in this directory—`memconfig.json` and `memconfig.lock`—in Step 8.
+Open up `index.ts` to get started. We'll go over the other files in this directory—`memconfig.json` and `views.tsx`—in Steps 8 and 9.
 
 ## What you'll learn
 
-1. [Membrane state](./index.ts#L27)
-1. [Membrane actions and fields](./index.ts#L47)
-1. [Membrane `sms` and `email`](./index.ts#L65)
-1. [Membrane timers](./index.ts#L103)
-1. [Membrane HTTP endpoints](./index.ts#L124)
-1. [Membrane observability](./index.ts#L147)
-1. [Membrane API drivers](./index.ts#L161)
-1. [The Membrane Graph](./index.ts#L186)
+1. [Membrane state](./index.ts#L20)
+2. [Membrane actions and fields](./index.ts#L44)
+3. [Membrane `sms` and `email`](./index.ts#L79)
+4. [Membrane timers](./index.ts#L109)
+5. [Membrane HTTP endpoints](./index.ts#L130)
+6. [Membrane observability](./index.ts#L157)
+7. [Membrane API packages](./index.ts#L171)
+8. [Membrane Graph](./index.ts#L199)
+9. [Membrane Dashboard](./index.ts#L216)
 
 ## Where to learn more
 

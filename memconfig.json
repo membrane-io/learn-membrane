@@ -8,6 +8,14 @@
           {
             "name": "status",
             "type": "String"
+          },
+          {
+            "name": "name",
+            "type": "String"
+          },
+          {
+            "name": "dependencies",
+            "type": "Json"
           }
         ],
         "actions": [
@@ -21,6 +29,16 @@
           },
           {
             "name": "getGitHubProfile",
+            "type": "Void"
+          },
+          {
+            "name": "configure",
+            "params": [
+              {
+                "name": "name",
+                "type": "String"
+              }
+            ],
             "type": "Void"
           }
         ]
